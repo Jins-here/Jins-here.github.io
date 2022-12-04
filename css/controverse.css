@@ -1,0 +1,30 @@
+main {
+    text-align: justify;
+}
+
+
+h2,h3 {
+    margin-top: 8vh;
+}
+
+p,q{
+    margin-top: 3vh;
+}
+
+li + img{
+    margin-bottom: 4vh;
+}
+
+li {
+    margin-bottom: 4vh;
+}
+
+@media screen and (min-width:1200px) {
+    main {
+      margin: 0 12%;
+    }
+  }
+
+ul div img {
+    max-height: 300px;
+}

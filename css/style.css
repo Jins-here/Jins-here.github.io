@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --pink: #f2849e;
+}
+
+
+/* GENERAL */
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover
+}
+
+div img {
+  border-radius: 4px;
+}
+
+.iframe {
+  left: 0;
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.092%;
+}
+
+div iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  min-height: 100vh;
+  display: flex !important;
+  flex-direction: column !important;
+  background-image: url(../images/Meteor.svg);
+
+}
+
+article {
+  border-radius: 4px;
+
+  padding: 4vw;
+}
+
+main p,
+main li {
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+/* ================================================================== */
+/* ============================ HEADER ============================== */
+/* ================================================================== */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 0;
+  background-color: #Fff;
+}
+
+header .logo {
+  max-width: 45px;
+}
+
+/* ===================== Barre statut Scroll ======================== */
+.scrollStatus {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--pink);
+  width: 0%;
+}
+
+/* ============================== FIN HEADER =============================== */
+
+
+main {
+  margin: 0 7%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+/* ================================================================== */
+/*=========================== Menu Burger ===========================*/
+/* ================================================================== */
+
+nav {
+  padding: 30px;
+}
+
+
+nav:hover i {
+  background-color: #f2849e;
+  transition: ease-in-out 0.2s;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+nav ul li:not(:first-child) {
+  margin-left: 55px;
+}
+
+nav ul li a {
+  display: inline-block;
+
+  color: #1f2227;
+  font-size: 16px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+nav ul li a:hover {
+  color: #f2849e;
+  text-decoration: none;
+}
+
+nav ul li ul,
+nav ul li li {
+  display: none;
+}
+
+nav ul li:hover ul,
+nav ul li:hover li {
+  display: block;
+}
+
+nav ul li:hover ul {
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  display: block;
+  margin: 0;
+  padding: 0;
+  z-index: 99999999;
+  padding-top: 15px;
+  border: #f2849e 1px solid;
+  border-radius: 6px;
+
+}
+
+nav ul li:hover ul li {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li:hover ul li a {
+  color: #f2849e;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 5px;
+}
+
+nav ul li:hover ul li a:hover {
+  color: #1f2227;
+  background-color: #f2849e;
+  border-radius: 5px;
+}
+
+
+/*=========================== Responsive MB ===========================*/
+@media screen and (max-width: 1200px) {
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: #1f2227;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  .nav-container ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  .nav-container ul li {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .nav-container ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+
+  .nav-container ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+
+  .nav-container ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+
+  .nav-container ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+
+  .nav-container ul li:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .nav-container ul li a {
+    padding: 10px 25px;
+    opacity: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav-open {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+
+  nav ul li ul {
+    display: none !important;
+
+  }
+
+  /*=========================== Barres MB ===========================*/
+  .nav-open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #7e7e7e;
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+
+  .nav-open i:nth-child(1) {
+    margin-top: 16px;
+  }
+
+  .nav-open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+
+  .nav-open i:nth-child(3) {
+    margin-top: 4px;
+  }
+}
+
+/*=========================== Animation MB ===========================*/
+#nav:checked+.nav-open {
+  transform: rotate(45deg);
+}
+
+#nav:checked+.nav-open i {
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+
+#nav:checked+.nav-open:hover i {
+  background-color: #f2849e;
+}
+
+#nav:checked+.nav-open i:nth-child(1) {
+  transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked+.nav-open i:nth-child(2) {
+  opacity: 0;
+}
+
+#nav:checked+.nav-open i:nth-child(3) {
+  transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked~.nav-container {
+  z-index: 9990;
+  opacity: 1;
+}
+
+#nav:checked~.nav-container ul li a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
+}
+
+/* =============================== FIN MB ================================= */
+
+
+
+
+/* ================================================================== */
+/*=========================== Footer ============================*/
+/* ================================================================== */
+
+footer {
+  background-color: #FFF6F8;
+  position: relative;
+  margin-top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+  align-items: center;
+  border: 6px solid #f2849e;
+  border-radius: 9999px;
+}
+
+
+/* ================================================================== */
+
+
+
+
+/* ================================================================== */
+/*================== Bouton Retour en Haut ===========================*/
+/* ================================================================== */
+
+.scrollTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 50px;
+  z-index: 9999;
+}
+
+.scrollTop:hover img {
+  filter: invert(71%) sepia(16%) saturate(2177%) hue-rotate(300deg) brightness(99%) contrast(91%);
+}
+
+/* ========================== FIN BREH ============================== */
+
+
+
+
+/* ================================================================== */
+/* ==============================RESPONSIVE========================== */
+/* ================================================================== */
+
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.75em;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  h1 {
+    font-size: 2em;
+    margin: 0 0 1em 0;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  main p,
+  main li,
+  article p {
+    font-size: 1.1em;
+  }
+
+}
